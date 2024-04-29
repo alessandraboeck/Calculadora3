@@ -33,6 +33,7 @@ export default function App() {
   function calculator() {
     const splitNumbers = currentNumber.split(' ');
     const fistNumber = parseFloat(splitNumbers[0]);
+    // eslint-disable-next-line no-shadow
     const lastNumber = parseFloat(splitNumbers[2]);
     const operator = splitNumbers[1];
 
@@ -56,11 +57,11 @@ export default function App() {
   function handleInput(buttonPressed) {
     console.log(buttonPressed); // Mostra no Console a tecla pressionada
     if (
-      (buttonPressed === '+') |
-      (buttonPressed === '-') |
-      (buttonPressed === 'x') |
+      (buttonPressed === '+')
+      (buttonPressed === '-')
+      (buttonPressed === 'x')
       (buttonPressed === '/')
-    ) {
+    ){
       setCurrentNumber(currentNumber + '' + buttonPressed + '');
       return;
     }
