@@ -6,8 +6,8 @@ export default function App() {
   // Mapeamento de teclas
   const buttons = ['LIMPAR', 'DEL', '%', '/', 7, 8, 9, "x", 6, 5, 4, '-', 3, 2, 1, '+', 0, '.', '+/-', '=']
 
-  const [currentNumber, setCurrentNumber] = useState("")
-  const [lastNumber, setLastNumber] = useState("")
+  const [currentNumber, setCurrentNumber] = useState('')
+  const [lastNumber, setLastNumber] = useState('')
 
 
   function calculator(){
@@ -35,8 +35,8 @@ export default function App() {
 
   function handleInput(buttonPressed){
     console.log(buttonPressed) // Mostra no Console a tecla pressionada
-    if(buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "x" | buttonPressed === "/" ){
-      setCurrentNumber(currentNumber + " " + buttonPressed + " ")
+    if(buttonPressed === '+' | buttonPressed === '-' | buttonPressed === 'x' | buttonPressed === '/' ){
+      setCurrentNumber(currentNumber + '' + buttonPressed + '')
       return
     }
     switch(buttonPressed){
@@ -44,11 +44,11 @@ export default function App() {
         setCurrentNumber(currentNumber.substring(0, (currentNumber.length - 2)))
         return
       case 'LIMPAR': // Limpa todo o conteúdo
-        setLastNumber("") 
-        setCurrentNumber("") 
+        setLastNumber('') 
+        setCurrentNumber('') 
         return
       case '=':
-        setLastNumber(currentNumber + " = ")
+        setLastNumber(currentNumber + '=')
         calculator()
         return
       case '+/-':
@@ -93,18 +93,18 @@ const styles = StyleSheet.create({
   },
   results: {
     flex: 2,
-    justifyContent: "center",
-    backgroundColor: "#f5f5f5"
+    justifyContent: 'center',
+    backgroundColor: '#f5f5f5'
   },
   resultText: {
-    color: "#282F38",
+    color: '#282F38',
     fontSize: 32,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     padding: 12,
-    textAlign: "right"
+    textAlign: 'right'
   },
   historyText:{
-    color: "#7c7c7c",
+    color: '#7c7c7c',
     fontSize: 20,
     marginRight: 10,
     alignSelf: 'flex-end',
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   textButton: {
-    color: "#7c7c7c",
+    color: '#7c7c7c',
     fontSize: 20,
   } 
 });
